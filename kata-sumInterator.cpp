@@ -1,8 +1,5 @@
 #include <iostream>
 #include <string>
-#include "stack.h"
-#include <algorithm>
-#include <vector>
 
 int sumInterator(int begin, int end, int step)
 {

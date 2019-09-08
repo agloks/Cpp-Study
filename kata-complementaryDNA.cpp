@@ -1,9 +1,5 @@
 #include <iostream>
 #include <string>
-#include "stack.h"
-#include <algorithm>
-#include <vector>
-#include <regex>
 
 std::string DNAStrand(const std::string& dna)
 {
