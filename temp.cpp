@@ -1,28 +1,36 @@
 #include <iostream>
 #include <string>
-#include "stack.h"
-#include <algorithm>
-#include <vector>
 
-void print(int interador)
+std::string DNAStrand(const std::string& dna)
 {
-    std::cout << interador + 10 << "\n";
+    int len = dna.length();
+    char *send = (char*)calloc(len+1,sizeof(char));
+    int x = 0;
+    for(x; x < len; x++)
+    {
+        switch (dna[x])
+        {
+        case 'G':
+            send[x] = 'C';
+            break;
+        case 'T':
+            send[x] = 'A';
+            break;
+        case 'A':
+            send[x] = 'T';
+            break;
+        case 'C':
+            send[x] = 'G';
+            break;
+        }
+    }
+    send[x] = '\0';
+    return send; 
 }
 
 int main(void)
 {
-    // stack pilha(2 , "let's go");
-    // std::cout << pilha.getValues("name") << std::endl;
-    
-    // std::vector<int> vector;
-    // vector.push_back(10);
-    // vector.push_back(20);
-    // vector.push_back(30);
-
-    // std::for_each(vector.begin(),vector.end(),print);
-
-    int set [9] = {1,2,3,4,5,6,7,8,9};
-    std::for_each(std::begin(set),std::end(set),print);
-
+    std::string word = "ATTGC";
+    std::cout << DNAStrand(word) << std::endl;
     return 0;
 }
